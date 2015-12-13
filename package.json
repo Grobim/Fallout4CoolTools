@@ -1,6 +1,7 @@
 {
   "name": "fallout4CoolTools",
   "version": "0.0.0",
+  "license" : "MIT",
   "dependencies": {},
   "scripts": {
     "test": "gulp test"
