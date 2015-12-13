@@ -1,0 +1,27 @@
+<div class="locationNotes" flex layout="column">
+  <div class="md-whiteframe-z1">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h3>
+          <span translate>fallout4CoolTools.layout.locationNotes.searchLocPanel.header</span>
+        </h3>
+      </div>
+    </md-toolbar>
+    <md-toolbar>
+      <div class="md-toolbar-tools" style="background-color: rgb(255,255,255);">
+        <md-input-container class="md-icon-float md-input-has-messages">
+          <label for="loginEmail"><span translate>fallout4CoolTools.layout.common.fields.locationName</span></label>
+          <ng-md-icon icon="search" style="fill: black"></ng-md-icon>
+          <input type="text" ng-model="locNotesCtrl.query" />
+        </md-input-container>
+      </div>
+    </md-toolbar>
+    <md-divider></md-divider>
+    <md-content flex>
+      <md-list>
+        <md-list-item class="md-2-line" ng-repeat="item in todos">
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </div>
+</div>

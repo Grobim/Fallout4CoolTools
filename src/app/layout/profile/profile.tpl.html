@@ -1,0 +1,28 @@
+<form name="profileCtrl.profileForm" ng-submit="profileCtrl.saveProfile()">
+  <h2 class="md-headline" translate>fallout4CoolTools.layout.profile.publicData</h2>
+  <md-input-container class="md-icon-float md-block"
+                      smart-field=""
+                      loading-spinner="profilePublicInfosLoad">
+    <label for="loginName"><span translate>fallout4CoolTools.layout.profile.fields.name</span></label>
+    <ng-md-icon icon="person"></ng-md-icon>
+    <input id="loginName" label="loginName" name="loginName" type="text" ng-model="profileCtrl.profile.nickname" required />
+  </md-input-container>
+  <h2 class="md-headline" translate>fallout4CoolTools.layout.profile.privateData</h2>
+  <div layout="" layout-sm="column">
+    <md-input-container class="md-icon-float md-block" smart-field="" loading-spinner="profilePrivateInfosLoad" flex>
+      <label for="loginEmail"><span translate>fallout4CoolTools.layout.common.fields.email</span></label>
+      <ng-md-icon icon="email"></ng-md-icon>
+      <input id="loginEmail" label="loginEmail" name="loginEmail" type="email" ng-model="profileCtrl.profilePrivateInfos.email" ng-disabled="profileCtrl.userAuth.provider === 'password'" />
+    </md-input-container>
+    <md-switch loading-spinner="publicProfilePrivateInfoLoad" id="loginName" ng-model="profileCtrl.publicProfilePrivateInfo.email" aria-label="Make public" class="md-primary md-block" md-no-ink>
+      <span translate>fallout4CoolTools.layout.profile.makePublic</span>
+    </md-switch>
+  </div>
+  <md-input-container layout="row">
+      <md-button class="md-raised md-primary save-button" ng-disabled="profileCtrl.profileForm.$invalid" flex="33" flex-sm="100">
+        <div loading-spinner="profilePublicInfosSave">
+          <span translate>fallout4CoolTools.layout.common.save</span>
+        </div>
+      </md-button>
+  </md-input-container>
+</form>

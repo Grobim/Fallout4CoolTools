@@ -1,0 +1,14 @@
+{
+  "fallout4CoolTools.layout.profile" : {
+    "header"      : "Profile",
+    "publicData"  : "Public data",
+    "privateData" : "Private data",
+    "makePublic"  : "Make it public",
+    "fields"      : {
+      "name" : "Name"
+    },
+    "messages"    : {
+      "success"  : "Profile successfully saved"
+    }
+  }
+}

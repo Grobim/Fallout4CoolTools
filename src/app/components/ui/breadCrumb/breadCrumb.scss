@@ -1,0 +1,83 @@
+$color : rgb(63,81,181);
+.my-breadcrumb {
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 5px;
+  counter-reset: flag;
+}
+.my-breadcrumb a {
+  text-decoration: none;
+  outline: none;
+  display: block;
+  float: left;
+  font-size: 12px;
+  line-height: 36px;
+  color: #fff;
+  padding: 0 10px 0 60px;
+  position: relative;
+}
+.my-breadcrumb a:first-child {
+  padding-left: 46px;
+  border-radius: 5px 0 0 5px;
+}
+.my-breadcrumb a:first-child:before {
+  left: 14px;
+}
+.my-breadcrumb a:last-child {
+  border-radius: 0 5px 5px 0;
+  padding-right: 20px;
+}
+.my-breadcrumb a:last-child:after {
+  content: none;
+}
+.my-breadcrumb a:before {
+  content: counter(flag);
+  counter-increment: flag;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  margin: 8px 0;
+  position: absolute;
+  top: 0;
+  left: 30px;
+  font-weight: bold;
+}
+.my-breadcrumb a:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -18px;
+  width: 36px;
+  height: 36px;
+  transform: scale(0.707) rotate(45deg);
+  z-index: 1;
+  box-shadow: 2px -2px 0 2px lighten($color, 15%);
+  border-radius: 0 5px 0 50px;
+}
+.flat a,
+.flat a:after {
+  background: #fff;
+  color: $color;
+//  transition: none 0.5s;
+}
+.flat a:before {
+  background: #fff;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+.flat a:hover,
+.flat a.active,
+.flat a:hover:after,
+.flat a.active:after {
+  background: $color;
+}
+.flat a:hover,
+.flat a.active {
+  color: #fff;
+}
+.flat a:hover:before,
+.flat a.active:before {
+  color: $color;
+}
+

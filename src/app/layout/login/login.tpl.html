@@ -1,0 +1,68 @@
+<h2 class="md-headline" translate>fallout4CoolTools.layout.login.fastConnection.header</h2>
+<div layout="row" layout-wrap="" layout-sm="column" class="login-providers">
+  <md-button class="md-primary md-raised" flex flex-sm="50" ng-click="loginCtrl.oauthLogin('facebook')">
+    <ng-md-icon icon="facebook-box"></ng-md-icon>
+    <span translate>fallout4CoolTools.layout.login.fastConnection.facebook</span>
+  </md-button>
+  <md-button flex flex-sm="50" class="md-primary md-raised" ng-click="loginCtrl.oauthLogin('google')" flex>
+    <ng-md-icon icon="google-plus"></ng-md-icon>
+    <span translate>fallout4CoolTools.layout.login.fastConnection.google</span>
+  </md-button>
+  <md-button class="md-primary md-raised" flex flex-sm="50" ng-click="loginCtrl.oauthLogin('twitter')">
+    <ng-md-icon icon="twitter"></ng-md-icon>
+    <span translate>fallout4CoolTools.layout.login.fastConnection.twitter</span>
+  </md-button>
+  <md-button class="md-primary md-raised" flex flex-sm="50" ng-click="loginCtrl.oauthLogin('github')">
+    <ng-md-icon icon="github-circle"></ng-md-icon>
+    <span translate>fallout4CoolTools.layout.login.fastConnection.github</span>
+  </md-button>
+</div>
+<md-divider id="login-divider"></md-divider>
+<h2 class="md-headline" translate>fallout4CoolTools.layout.login.emailConnection.header</h2>
+<form name="loginCtrl.loginForm">
+  <md-input-container class="md-icon-float" smart-field="">
+    <label for="loginEmail"><span translate>fallout4CoolTools.layout.common.fields.email</span></label>
+    <ng-md-icon icon="email"></ng-md-icon>
+    <input id="loginEmail" required name="email" type="email" ng-model="loginCtrl.email" />
+  </md-input-container>
+  <md-input-container class="md-icon-float" smart-field="">
+    <label for="loginPass"><span translate>fallout4CoolTools.layout.common.fields.password</span></label>
+    <ng-md-icon icon="lock"></ng-md-icon>
+    <input id="loginPass" required name="pass" type="password" ng-model="loginCtrl.pass" />
+  </md-input-container>
+  <md-input-container ng-cloak ng-show="loginCtrl.createMode" class="md-icon-float" smart-field="">
+    <label for="loginConfirm"><span translate>fallout4CoolTools.layout.common.fields.confirmPassword</span></label>
+    <ng-md-icon icon="lock"></ng-md-icon>
+    <input id="loginConfirm" ng-required="loginCtrl.createMode" name="confirm" type="password" ng-model="loginCtrl.confirm" />
+  </md-input-container>
+  <div layout="row" flex="70">
+    <md-button ng-click="loginCtrl.passwordLogin(loginCtrl.email, loginCtrl.pass)"
+               ng-if="!loginCtrl.createMode"
+               ng-disabled="loginCtrl.loginForm.$invalid"
+               class="md-raised md-primary"
+               flex>
+      <span translate>fallout4CoolTools.layout.login.emailConnection.buttons.login</span>
+    </md-button>
+    <md-button ng-click="loginCtrl.createAccount(loginCtrl.email, loginCtrl.pass, loginCtrl.confirm)"
+               ng-if="loginCtrl.createMode"
+               ng-disabled="loginCtrl.loginForm.$invalid"
+               class="md-raised md-primary"
+               flex>
+      <span translate>fallout4CoolTools.layout.login.emailConnection.buttons.create</span>
+    </md-button>
+    <md-button ng-click="loginCtrl.createMode = true"
+               ng-if="!loginCtrl.createMode"
+               type="button"
+               class="md-raised"
+               flex>
+      <span translate>fallout4CoolTools.layout.login.emailConnection.buttons.register</span>
+    </md-button>
+    <md-button ng-if="loginCtrl.createMode"
+               ng-click="loginCtrl.createMode = false"
+               type="button"
+               class="md-raised"
+               flex>
+      <span translate>fallout4CoolTools.layout.common.cancel</span>
+    </md-button>
+  </div>
+</form>

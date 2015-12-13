@@ -1,0 +1,13 @@
+button.md-primary,button.md-warn,button.md-accent {
+  &.md-button div[loading-spinner] md-progress-circular .md-inner {
+    .md-left .md-half-circle {
+      border-left-color : white;
+      border-top-color  : white;
+    }
+
+    .md-right .md-half-circle {
+      border-right-color : white;
+      border-top-color  : white;
+    }
+  }
+}

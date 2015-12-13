@@ -1,0 +1,91 @@
+<div layout="vertical" layout-fill>
+  <md-sidenav class="md-sidenav-left md-whiteframe-z1 main-side-nav"
+              md-component-id="mainMenu"
+              md-is-locked-open="$mdMedia('gt-md')"
+              ng-class="{'md-whiteframe-z3' : mainMenuHovered}"
+              ng-mouseover="mainMenuHovered = true;"
+              ng-mouseleave="mainMenuHovered = false;"
+              md-swipe-left="layoutCtrl.toggleNavbar()">
+    
+    <md-toolbar class="md-hue-2 md-whiteframe-z1">
+      <div class="md-toolbar-tools">
+        <span translate>fallout4CoolTools.layout.common.appName</span>
+      </div>
+    </md-toolbar>
+    
+    <md-content role="navigation">
+      <ul class="side-menu">
+        <li ng-repeat="section in layoutCtrl.menuStates"
+            class="parent-list-item"
+            ng-class="{'border-less' : section.borderLess,
+                       'toggle-menu' : section.type === 'toggle'}"
+            ng-if="layoutCtrl.userHasAuthRights(section)">
+          <h2 class="menu-heading" ng-if="section.type === 'heading'"
+              id="heading_{{ section.name | nospace }}">
+            <span translate>{{section.name | translate}}</span>
+          </h2>
+          <material-menu-link section="section"
+                         ng-if="section.type === 'link'"></material-menu-link>
+          <material-menu-toggle section="section"
+                           ng-if="section.type === 'toggle'"></material-menu-toggle>
+        </li>
+        <li id="logout-menu-item" ng-show-auth class="md-default-theme md-bg md-warn md-hue-1">
+          <md-button flex layout="row" ng-click="layoutCtrl.logout()">
+            <ng-md-icon icon="logout"></ng-md-icon> 
+            <span translate>fallout4CoolTools.layout.header.logout</span>
+          </md-button>
+        </li>
+        <li class="lang-selector" layout="row">
+          <md-button disabled class="md-icon my-icon-button" aria-label="Bookmark" flex="none">
+            <img ng-src="assets/images/flags/22x14/{{layoutCtrl.selectedItem.flag}}.png" alt="Bookmark">
+          </md-button>
+          <md-autocomplete
+            md-selected-item="layoutCtrl.selectedItem"
+            md-search-text="layoutCtrl.searchText"
+            md-selected-item-change="layoutCtrl.changeLang(item)"
+            md-items="item in layoutCtrl.querySearch(layoutCtrl.searchText)"
+            md-item-text="item.translation"
+            md-min-length="0"
+            md-select-on-match="true"
+            layout-fill>
+          <md-item-template layout="row">
+            <span md-highlight-text="layoutCtrl.searchText" md-highlight-flags="^i">
+              {{item.translation}}
+            </span>
+            <img class="in-select-lang-img" ng-src="assets/images/flags/22x14/{{item.flag}}.png" />
+          </md-item-template>
+          <md-not-found>
+            <span translate translate-values="{selectedLang : layoutCtrl.searchText}">fallout4CoolTools.layout.siveNav.langNotFound</span>
+          </md-not-found>
+        </md-autocomplete>
+        </li>
+      </ul>
+    </md-content>
+  </md-sidenav>
+  <div layout="column" layout-fill style="overflow:auto;">
+
+    <md-toolbar>
+      <div class="md-toolbar-tools md-whiteframe-z1">
+        <md-button hide-gt-md="" ng-click="layoutCtrl.toggleNavbar()" class="md-icon-button" aria-label="Settings">
+          <ng-md-icon icon="menu"></ng-md-icon> 
+        </md-button>
+        <h2 translate>{{layoutCtrl.getTitleKey()}}</h2>
+      </div>
+    </md-toolbar>
+
+    <div ncy-breadcrumb layout-margin=""></div>
+
+    <md-divider></md-divider>
+
+    <md-content layout="column" layout-margin="" flex>
+
+      <div ui-view flex layout="row"></div>
+
+      <div class="footer">
+        <p translate>fallout4CoolTools.layout.footer.text</p>
+      </div>
+
+    </md-content>
+  </div>
+
+</div>

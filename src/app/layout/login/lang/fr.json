@@ -1,0 +1,30 @@
+{
+  "fallout4CoolTools.layout.login" : {
+    "header"          : "Page de connexion",
+    "fastConnection"  : {
+      "header"   : "Connexion rapide",
+      "facebook" : "Facebook",
+      "google"   : "Google",
+      "github"   : "Github",
+      "twitter"  : "Twitter"
+    },
+    "emailConnection" : {
+      "header" : "Connexion par compte mail",
+      "buttons" : {
+        "login" : "Connexion",
+        "register" : "Nouveau compte",
+        "create" : "Créer nouveau compte"
+      },
+      "errors"  : {
+        "passwordsNotMatch" : "Les mots de passes ne sont pas identiques",
+        "emailTaken"        : "Cet email est déjà prit",
+        "invalidPassword"   : "Le mot de passe est incorrect",
+        "invalidUser"       : "Aucun compte rattaché à cet email"
+      },
+      "success" : {
+        "login"    : "Connexion réussie",
+        "register" : "Compte créé avec succès"
+      }
+    }
+  }
+}

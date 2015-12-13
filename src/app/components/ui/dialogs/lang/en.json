@@ -1,0 +1,12 @@
+{
+  "fallout4CoolTools.components.ui.dialogs" : {
+    "stateChange" : {
+      "title"   : "Unsaved changes",
+      "content" : "You have unsaved changes, continue without saving or stay ?",
+      "buttons" : {
+        "continue" : "Continue without saving",
+        "stay"     : "Stay and confirm changes"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "fallout4CoolTools.layout": {
+    "common": {
+      "appName" : "Fallout 4 Cool Tools",
+      "cancel"  : "Cancel",
+      "save"    : "Save",
+      "fields"  : {
+        "email"           : "Email",
+        "password"        : "Password",
+        "confirmPassword" : "Confirm password",
+        "locationNotes"   : "Location notes",
+        "locationName"    : "Location name"
+      },
+      "errors"  : {
+        "required" : "This field is required",
+        "rooting"  : {
+          "requireAuth"   : "This page is only available for logged users",
+          "requireUnauth" : "This page is only available for unlogged users"
+        }
+      }
+    },
+    "messages": {
+      "logout" : "Successfully logged out"
+    },
+    "header": {
+      "logout"        : "Logout",
+      "home"          : "Home",
+      "profile"       : "Profile",
+      "login"         : "Login",
+      "locationNotes" : "Locations notes"
+    },
+    "footer": {
+      "text": "♥ We are Fallout"
+    },
+    "siveNav": {
+      "langNotFound": "Language not found"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+<div>
+  <div ng-cloak class="my-breadcrumb flat md-whiteframe-z1">
+    <a href="{{step.ncyBreadcrumbLink}}" ng-repeat="step in steps | limitTo:(steps.length-1)" translate translate-values="{{step.ncyBreadcrumbTranslateValues}}">{{step.ncyBreadcrumbLabel}}</a>
+    <a href="{{step.ncyBreadcrumbLink}}" ng-repeat="step in steps | limitTo:-1" class="active" translate translate-values="{{step.ncyBreadcrumbTranslateValues}}">{{step.ncyBreadcrumbLabel}}</a>
+  </div>
+</div>

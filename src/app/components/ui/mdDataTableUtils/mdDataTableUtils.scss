@@ -1,0 +1,35 @@
+md-data-table-container table[md-data-table] {
+
+  tbody tr[md-table-cell] {
+
+    a.md-button,button.md-button {
+      min-height: 30px; 
+      height:auto !important; 
+      height: 30px; 
+      line-height: 30px;
+    }
+
+  }
+
+  &.md-data-table-condensed {
+
+    thead tr th div {
+      height: 32px;
+    }
+
+    tbody tr {
+      height: 32px;
+
+      button.md-button {
+        min-height: 19px;
+        height: auto !important;
+        height: 19px;
+        line-height: 19px;
+        font-size: 12px;
+      }
+
+    }
+
+  }
+
+}

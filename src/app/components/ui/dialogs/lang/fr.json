@@ -1,0 +1,12 @@
+{
+  "fallout4CoolTools.components.ui.dialogs" : {
+    "stateChange" : {
+      "title"   : "Changements non sauvegardés",
+      "content" : "Certains informations ont été changées mais pas sauvegardées. Continuer sans sauvegarder ou rester ?",
+      "buttons" : {
+        "continue" : "Continuer sans sauvegarder",
+        "stay"     : "Rester et confimer les changements"
+      }
+    }
+  }
+}

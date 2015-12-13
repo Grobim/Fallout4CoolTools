@@ -1,0 +1,15 @@
+<md-button class="md-button-toggle" ng-class="{toggled : isOpen(),
+    'md-default-theme md-fg md-primary md-hue-2': isCurrentState()}"
+           ng-click="toggle()"
+           aria-controls="docs-menu-{{section.name | nospace}}"
+           flex layout="row"
+           aria-expanded="{{isOpen()}}">
+  <ng-md-icon icon="{{section.icon}}" ng-style="{fill : (!section.icon) ? 'transparent': ''}"></ng-md-icon> 
+  <span flex="grow" layout-fill="">{{section.name | translate | trunc:21}}</span>
+  <ng-md-icon class="right-icon" icon="{{getCaretIcon()}}"></ng-md-icon> 
+</md-button>
+<ul ng-show="isOpen()" id="docs-menu-{{section.name | nospace}}" class="menu-toggle-list">
+  <li ng-repeat="page in section.pages">
+    <material-menu-link section="page"></material-menu-link>
+  </li>
+</ul>
