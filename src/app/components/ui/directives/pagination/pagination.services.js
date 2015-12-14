@@ -1,11 +1,11 @@
 (function() {
   'use strict';
 
-  angular.module('fallout4CoolTools.components.ui.mdDataTableUtils')
-    .service('MdDataTableUtils', ['$filter', MdDataTableUtilsService])
+  angular.module('fallout4CoolTools.components.ui.directives.pagination')
+    .service('paginationService', ['$filter', PaginationService])
   ;
 
-  function MdDataTableUtilsService($filter) {
+  function PaginationService($filter) {
 
     return {
       onQueryChange : onQueryChange
@@ -28,12 +28,9 @@
       } else {
         return list;
       }
-
-      tableConfig.page = Math.max(1, Math.min(tableConfig.page, Math.ceil(tableConfig.totalItems / tableConfig.limit)));
-
+      tableConfig.page = Math.max(1, Math.min((tableConfig.page) || 0, (Math.ceil(tableConfig.totalItems / tableConfig.limit) || 0)));
       from = (tableConfig.page - 1) * tableConfig.limit;
       to = _.min([tableConfig.totalItems - 1, from + tableConfig.limit - 1]);
-
 
       // Sorting
       if (tableConfig.order && tableConfig.order.length) {

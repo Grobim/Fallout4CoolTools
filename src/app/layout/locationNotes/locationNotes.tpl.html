@@ -9,19 +9,33 @@
     </md-toolbar>
     <md-toolbar>
       <div class="md-toolbar-tools" style="background-color: rgb(255,255,255);">
-        <md-input-container class="md-icon-float md-input-has-messages">
-          <label for="loginEmail"><span translate>fallout4CoolTools.layout.common.fields.locationName</span></label>
+        <md-input-container flex class="md-icon-float md-input-has-messages">
+          <label for="searchLocation">
+            <span translate>fallout4CoolTools.layout.common.fields.search</span>
+          </label>
           <ng-md-icon icon="search" style="fill: black"></ng-md-icon>
-          <input type="text" ng-model="locNotesCtrl.query" />
+          <input
+            type="text"
+            id="searchLocation"
+            name="searchLocation"
+            ng-model="locNotesCtrl.listConfig.query"
+            ng-change="locNotesCtrl.onQueryChange()" />
         </md-input-container>
       </div>
     </md-toolbar>
     <md-divider></md-divider>
-    <md-content flex>
-      <md-list>
-        <md-list-item class="md-2-line" ng-repeat="item in todos">
+    <md-content>
+      <md-list class="locationList">
+        <md-list-item ng-repeat="loc in locNotesCtrl.locations">
+          <md-icon md-svg-src="{{'assets/images/locations/' + loc.icon + '.svg'}}"></md-icon>
+          <p>{{ loc.name }}</p>
+          <md-button class="md-icon-button" aria-label="Comment">
+            <ng-md-icon icon="comment" ng-style="locNotesCtrl.getIconStyle(loc)"></ng-md-icon>
+          </md-button>
         </md-list-item>
       </md-list>
     </md-content>
+    <f4ct-pagination config="locNotesCtrl.listConfig" change="locNotesCtrl.onQueryChange()"></f4ct-pagination>
+    <pre>{{locNotesCtrl.listConfig | json}}</pre>
   </div>
 </div>
