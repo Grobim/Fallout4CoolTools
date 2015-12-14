@@ -19,7 +19,23 @@
       },
       ncyBreadcrumb : {
         translate : 'fallout4CoolTools.layout.header.login'
-      }
+      },
+      onEnter       : [
+        '$state',
+        'LoginRooterService',
+        function(
+          $state,
+          LoginRooterService
+        ) {
+          if (
+            $state.current.name &&
+            $state.current.name.length &&
+            !$state.current.abstract
+          ) {
+            LoginRooterService.previousState($state.current.name, $state.params);
+          }
+        }
+      ]
     });
 
   }
