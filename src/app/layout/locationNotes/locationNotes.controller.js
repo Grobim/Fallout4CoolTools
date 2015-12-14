@@ -35,19 +35,26 @@
     _this.deleteComment = deleteComment;
 
     _this.hasComment = hasComment;
+    _this.isConnected = isConnected;
 
     return init();
 
     function init() {
+      var auth = F4ctAuth.$getAuth();
+
       _this.listConfig = {
         limit : 10,
         order : 'name'
       };
-      _this.userId = F4ctAuth.$getAuth().uid;
-      _this.userComments = $intFirebaseObject(new LocationNotes(_this.userId));
-      _this.userComments.$loaded(function() {
+      if (auth) {
+        _this.userId = auth.uid;
+        _this.userComments = $intFirebaseObject(new LocationNotes(_this.userId));
+        _this.userComments.$loaded(function() {
+          _this.locations = paginationService.onQueryChange(Locations, _this.listConfig);
+        });
+      } else {
         _this.locations = paginationService.onQueryChange(Locations, _this.listConfig);
-      });
+      }
     }
 
     function getIconStyle(location) {
@@ -77,7 +84,11 @@
     }
 
     function hasComment(location) {
-      return _this.userComments[location.name] && _this.userComments[location.name].length;
+      return _this.userId && _this.userComments[location.name] && _this.userComments[location.name].length;
+    }
+
+    function isConnected() {
+      return !!F4ctAuth.$getAuth();
     }
 
   }

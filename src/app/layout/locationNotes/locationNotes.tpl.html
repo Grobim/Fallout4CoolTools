@@ -32,7 +32,8 @@
           <md-button ng-if="locNotesCtrl.hasComment(loc)" class="md-icon-button" aria-label="Delete comment" ng-click="locNotesCtrl.deleteComment(loc, $event)">
             <ng-md-icon icon="delete" style="fill: red;"></ng-md-icon>
           </md-button>
-          <md-button class="md-icon-button" aria-label="Comment" ng-click="locNotesCtrl.editComment(loc, $event)">
+          {{_this.userId}}
+          <md-button ng-disabled="!locNotesCtrl.isConnected()" class="md-icon-button" aria-label="Comment" ng-click="locNotesCtrl.editComment(loc, $event)">
             <ng-md-icon icon="comment" ng-style="locNotesCtrl.getIconStyle(loc)"></ng-md-icon>
           </md-button>
         </md-list-item>

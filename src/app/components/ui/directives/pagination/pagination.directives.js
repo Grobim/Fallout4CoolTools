@@ -97,7 +97,7 @@
       }
 
       function to() {
-        return Math.min(scope.config.totalItems, ((scope.config.page - 1) * scope.config.limit) + scope.config.limit);
+        return Math.min(scope.config.totalItems, ((scope.config.page - 1) * parseInt(scope.config.limit)) + parseInt(scope.config.limit));
       }
 
       function _getMaxPages() {
