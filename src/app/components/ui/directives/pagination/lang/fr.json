@@ -1,0 +1,6 @@
+{
+  "f4ct-pagination" : {
+    "rowsLabel"     : "Lignes par page:",
+    "itemDisplayed" : "{from} - {to} sur {total}"
+  }
+}

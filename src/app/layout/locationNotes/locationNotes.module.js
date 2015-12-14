@@ -7,7 +7,8 @@
     'fallout4CoolTools.components.persistence.locationNotes',
     'fallout4CoolTools.components.data',
 
-    'fallout4CoolTools.components.ui.directives.pagination'
+    'fallout4CoolTools.components.ui.directives.pagination',
+    'fallout4CoolTools.components.ui.dialogs'
   ]);
 
 })();

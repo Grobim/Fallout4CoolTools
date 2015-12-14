@@ -1,15 +1,24 @@
 <div class="f4ct-pagination">
   <div>
-    <md-button class="md-icon-button" ng-click="pagnModel.firstPage()" aria-label="first page">
+    <span class="label" translate>f4ct-pagination.rowsLabel</span>
+    <md-select ng-model="config.limit" ng-change="change()" aria-label="Rows per page">
+      <md-option ng-repeat="state in pagnModel.states" value="{{state}}">
+        {{state}}
+      </md-option>
+    </md-select>
+    <span translate translate-values="{from : pagnModel.from(), to : pagnModel.to(), total : config.totalItems}">f4ct-pagination.itemDisplayed</span>
+  </div>
+  <div>
+    <md-button class="md-icon-button" ng-disabled="pagnModel.cantPrevious()" ng-click="pagnModel.firstPage()" aria-label="first page">
       <md-icon md-svg-src="assets/images/icons/navigate-first.svg"></md-icon>
     </md-button>
-    <md-button class="md-icon-button" ng-click="pagnModel.previousPage()" aria-label="previous page">
-      <ng-md-icon icon="navigate_before" style="fill:grey;"></ng-md-icon>
+    <md-button class="md-icon-button" ng-disabled="pagnModel.cantPrevious()" ng-click="pagnModel.previousPage()" aria-label="previous page">
+      <ng-md-icon icon="navigate_before" ng-style="pagnModel.getColor('previous')"></ng-md-icon>
     </md-button>
-    <md-button class="md-icon-button" ng-click="pagnModel.nextPage()" aria-label="next page">
-      <ng-md-icon icon="navigate_next" style="fill:grey;"></ng-md-icon>
+    <md-button class="md-icon-button" ng-disabled="pagnModel.cantNext()" ng-click="pagnModel.nextPage()" aria-label="next page">
+      <ng-md-icon icon="navigate_next" ng-style="pagnModel.getColor('next')"></ng-md-icon>
     </md-button>
-    <md-button class="md-icon-button" ng-click="pagnModel.lastPage()" aria-label="last page">
+    <md-button class="md-icon-button" ng-disabled="pagnModel.cantNext()" ng-click="pagnModel.lastPage()" aria-label="last page">
       <md-icon md-svg-src="assets/images/icons/navigate-last.svg"></md-icon>
     </md-button>
   </div>

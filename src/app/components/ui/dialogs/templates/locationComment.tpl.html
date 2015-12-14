@@ -1,0 +1,21 @@
+<md-dialog aria-label="Location comment">
+  <md-dialog-content class="md-dialog-content" role="document" tabIndex="-1">
+    <h2 class="md-title" translate translate-values="{location : editCommentdialog.location.$id}">fallout4CoolTools.components.ui.dialogs.locationComment.title</h2>
+    <div class="md-dialog-content-body">
+      <form name="editCommentdialog.commentForm">
+        <md-input-container smart-field="">
+          <label for="locationComment" translate>fallout4CoolTools.layout.common.fields.locationNotes</label>
+          <textarea required id="locationComment" name="locationComment" ng-model="editCommentdialog.location.$value" columns="1" rows="5"></textarea>
+        </md-input-container>
+      </form>
+    </div>
+  </md-dialog-content>
+  <md-dialog-actions class="md-actions">
+    <md-button ng-click="editCommentdialog.cancel()">
+      <span translate>fallout4CoolTools.layout.common.cancel</span>
+    </md-button>
+    <md-button ng-click="editCommentdialog.hide()" ng-disabled="editCommentdialog.commentForm.$invalid" class="md-primary md-raised">
+      <span translate>fallout4CoolTools.layout.common.save</span>
+    </md-button>
+  </md-dialog-actions>
+</md-dialog>

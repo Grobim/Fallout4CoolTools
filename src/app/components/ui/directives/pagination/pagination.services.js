@@ -30,7 +30,7 @@
       }
       tableConfig.page = Math.max(1, Math.min((tableConfig.page) || 0, (Math.ceil(tableConfig.totalItems / tableConfig.limit) || 0)));
       from = (tableConfig.page - 1) * tableConfig.limit;
-      to = _.min([tableConfig.totalItems - 1, from + tableConfig.limit - 1]);
+      to = _.min([tableConfig.totalItems - 1, parseInt(from) + parseInt(tableConfig.limit) - 1]);
 
       // Sorting
       if (tableConfig.order && tableConfig.order.length) {
