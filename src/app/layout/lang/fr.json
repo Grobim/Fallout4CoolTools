@@ -4,6 +4,7 @@
       "appName" : "Fallout 4 Cool Tools",
       "cancel"  : "Annuler",
       "save"    : "Sauvegarder",
+      "confirm" : "Confirmer",
       "fields"  : {
         "email"           : "Email",
         "password"        : "Mot de passe",
@@ -14,6 +15,7 @@
       },
       "errors"  : {
         "required" : "Ce champ est requis",
+        "email"    : "Email incorrect",
         "rooting"  : {
           "requireAuth"   : "Ce champ est seulement disponible pour les utilisateurs connectés",
           "requireUnauth" : "Ce champ est seulement disponible pour les utilisateurs déconnectés"

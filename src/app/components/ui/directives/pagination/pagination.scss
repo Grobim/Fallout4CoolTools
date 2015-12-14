@@ -1,5 +1,74 @@
 div.f4ct-pagination {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  display: flex;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
   .md-button.md-icon-button {
     margin : 0px;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 56px;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(0,0,0,.54);
+    border-top: 1px rgba(0,0,0,.12) solid;
+    box-sizing: border-box;
+
+    &:nth-child(1) {
+      flex: 1 1 auto;
+
+      >.label {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0 32px 0 24px;
+      }
+
+      >md-select {
+        flex: 0 0 auto;
+        padding: 0;
+        margin: 0 32px 0 0;
+
+        >md-select-value {
+          padding: 0;
+          min-width: 0;
+          min-height: 0;
+          border-bottom: 0!important;
+
+          >span:first-child {
+            flex: 1 0 auto;
+            max-width: none;
+            color: rgba(0,0,0,.54)!important;
+            transform: none;
+          }
+
+          >.md-select-icon {
+            align-items: center;
+            margin: 0;
+            color: rgba(0,0,0,.54)!important;
+            text-align: center;
+            transform: none;
+          }
+        }
+      }
+
+      >span:last-child {
+        @media (max-width: 600px) {
+          margin-right: 24px;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      flex: 0 0 auto;
+    }
   }
 }

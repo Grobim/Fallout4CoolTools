@@ -1,12 +1,19 @@
 {
   "fallout4CoolTools.components.ui.dialogs" : {
-    "stateChange" : {
+    "stateChange"          : {
       "title"   : "Unsaved changes",
       "content" : "You have unsaved changes, continue without saving or stay ?",
       "buttons" : {
         "continue" : "Continue without saving",
         "stay"     : "Stay and confirm changes"
       }
+    },
+    "locationComment"      : {
+      "title" : "Comment {location}"
+    },
+    "confirmDeleteComment" : {
+      "title"   : "Confirmation",
+      "content" : "Are you sure to delete this comment ?"
     }
   }
 }
