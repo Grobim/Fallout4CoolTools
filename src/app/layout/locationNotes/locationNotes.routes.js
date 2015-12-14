@@ -12,7 +12,7 @@
       controller    : 'LocationNotesController',
       controllerAs  : 'locNotesCtrl',
       data          : {
-        bodyClass      : 'login',
+        bodyClass      : 'locationNotes',
         windowTitleKey : 'fallout4CoolTools.layout.header.locationNotes'
       },
       ncyBreadcrumb : {
