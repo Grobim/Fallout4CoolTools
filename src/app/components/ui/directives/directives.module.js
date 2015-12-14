@@ -6,7 +6,8 @@
     'fallout4CoolTools.components.ui.directives.materialMenu',
     'fallout4CoolTools.components.ui.directives.loadingSpinner',
     'fallout4CoolTools.components.ui.directives.validators',
-    'fallout4CoolTools.components.ui.directives.smartField'
+    'fallout4CoolTools.components.ui.directives.smartField',
+    'fallout4CoolTools.components.ui.directives.pagination'
   ]);
 
 })();
