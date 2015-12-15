@@ -11,7 +11,16 @@
         "confirmPassword" : "Confirm password",
         "locationNotes"   : "Location notes",
         "locationName"    : "Location name",
-        "search"          : "Search"
+        "search"          : "Search",
+        "hacker"          : "Hacker",
+        "locksmith"       : "Locksmith"
+      },
+      "skillLevel" : {
+        "empty"    : "No need !",
+        "novice"   : "Novice",
+        "advanced" : "Advanced",
+        "expert"   : "Expert",
+        "master"   : "Master"
       },
       "errors"  : {
         "required" : "This field is required",

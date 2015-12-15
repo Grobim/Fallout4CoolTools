@@ -2,7 +2,8 @@
   'use strict';
 
   angular.module('fallout4CoolTools.components.ui.dialogs', [
-    'ngMaterial'
+    'ngMaterial',
+    'fallout4CoolTools.components.data'
   ]);
 
 })();

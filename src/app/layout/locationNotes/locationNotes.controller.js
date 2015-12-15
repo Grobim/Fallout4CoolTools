@@ -6,6 +6,7 @@
       '$scope',
       '$intFirebaseObject',
       'paginationService',
+      'locationNotesService',
       'DialogsService',
       'F4ctAuth',
       'LocationNotes',
@@ -19,6 +20,7 @@
     $scope,
     $intFirebaseObject,
     paginationService,
+    locationNotesService,
     DialogsService,
     F4ctAuth,
     LocationNotes,
@@ -60,7 +62,7 @@
     function getIconStyle(location) {
       var style = {};
 
-      if (hasComment(location)) {
+      if (hasComment(location) && isConnected()) {
         style.fill = 'red';
       }
 
@@ -79,12 +81,12 @@
 
     function deleteComment(location, $event) {
       DialogsService.confirmDeleteCommentDialog($event).then(function() {
-        $intFirebaseObject(new LocationNote(_this.userId, location.name)).$remove();
+        locationNotesService.deleteLocation($intFirebaseObject(new LocationNote(_this.userId, location.name)));
       });
     }
 
     function hasComment(location) {
-      return _this.userId && _this.userComments[location.name] && _this.userComments[location.name].length;
+      return _this.userId && _this.userComments[location.name];
     }
 
     function isConnected() {

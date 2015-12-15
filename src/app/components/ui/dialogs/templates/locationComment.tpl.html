@@ -3,9 +3,25 @@
     <h2 class="md-title" translate translate-values="{location : editCommentdialog.location.$id}">fallout4CoolTools.components.ui.dialogs.locationComment.title</h2>
     <div class="md-dialog-content-body">
       <form name="editCommentdialog.commentForm">
-        <md-input-container smart-field="">
+        <md-input-container>
           <label for="locationComment" translate>fallout4CoolTools.layout.common.fields.locationNotes</label>
-          <textarea required id="locationComment" name="locationComment" ng-model="editCommentdialog.location.$value" columns="1" rows="5"></textarea>
+          <textarea id="locationComment" name="locationComment" ng-model="editCommentdialog.location.note" columns="1" rows="5"></textarea>
+        </md-input-container>
+        <md-input-container flex>
+          <label for="locksmith" translate>fallout4CoolTools.layout.common.fields.locksmith</label>
+          <md-select id="locksmith" name="locksmith" ng-model="editCommentdialog.location.locksmith">
+            <md-option ng-repeat="level in editCommentdialog.locksmithLevels" value="{{level.value}}">
+              {{level.key | translate | capitalize}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container flex>
+          <label for="hacker" translate>fallout4CoolTools.layout.common.fields.hacker</label>
+          <md-select id="hacker" name="hacker" ng-model="editCommentdialog.location.hacker">
+            <md-option ng-repeat="level in editCommentdialog.hackerLevels" value="{{level.value}}">
+              {{level.key | translate | capitalize}}
+            </md-option>
+          </md-select>
         </md-input-container>
       </form>
     </div>
@@ -14,7 +30,7 @@
     <md-button ng-click="editCommentdialog.cancel()">
       <span translate>fallout4CoolTools.layout.common.cancel</span>
     </md-button>
-    <md-button ng-click="editCommentdialog.hide()" ng-disabled="editCommentdialog.commentForm.$invalid" class="md-primary md-raised">
+    <md-button ng-click="editCommentdialog.hide()" ng-disabled="editCommentdialog.commentForm.$pristine" class="md-primary md-raised">
       <span translate>fallout4CoolTools.layout.common.save</span>
     </md-button>
   </md-dialog-actions>

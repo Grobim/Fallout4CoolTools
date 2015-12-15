@@ -29,10 +29,9 @@
         <md-list-item ng-repeat="loc in locNotesCtrl.locations">
           <md-icon md-svg-src="{{'assets/images/locations/' + loc.icon + '.svg'}}"></md-icon>
           <p>{{ loc.name }}</p>
-          <md-button ng-if="locNotesCtrl.hasComment(loc)" class="md-icon-button" aria-label="Delete comment" ng-click="locNotesCtrl.deleteComment(loc, $event)">
+          <md-button ng-if="locNotesCtrl.hasComment(loc) && locNotesCtrl.isConnected()" class="md-icon-button" aria-label="Delete comment" ng-click="locNotesCtrl.deleteComment(loc, $event)">
             <ng-md-icon icon="delete" style="fill: red;"></ng-md-icon>
           </md-button>
-          {{_this.userId}}
           <md-button ng-disabled="!locNotesCtrl.isConnected()" class="md-icon-button" aria-label="Comment" ng-click="locNotesCtrl.editComment(loc, $event)">
             <ng-md-icon icon="comment" ng-style="locNotesCtrl.getIconStyle(loc)"></ng-md-icon>
           </md-button>
