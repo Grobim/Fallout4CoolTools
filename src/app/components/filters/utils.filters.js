@@ -8,6 +8,7 @@
     .filter('nospace', [NoSpaceFilter])
     .filter('humanizeDoc', [HumanizeDocFilter])
     .filter('trunc', [TruncFilter])
+    .filter('capitalize', [CapitalizeFilter])
   ;
 
   function ReplaceCharFilter() {
@@ -57,6 +58,12 @@
   function TruncFilter() {
     return function(input, length) {
       return _.trunc(input, length);
+    };
+  }
+
+  function CapitalizeFilter() {
+    return function(input) {
+      return _.capitalize(input);
     };
   }
 

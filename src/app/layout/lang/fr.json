@@ -11,7 +11,16 @@
         "confirmPassword" : "Confirmer mot de passe",
         "locationNotes"   : "Notes de locations",
         "locationName"    : "Nom de location",
-        "search"          : "Recherche"
+        "search"          : "Recherche",
+        "hacker"          : "Piratage",
+        "locksmith"       : "Crochetage"
+      },
+      "skillLevel" : {
+        "empty"    : "Pas besoin !",
+        "novice"   : "Débutant",
+        "advanced" : "Avancé",
+        "expert"   : "Expert",
+        "master"   : "Maître"
       },
       "errors"  : {
         "required" : "Ce champ est requis",
