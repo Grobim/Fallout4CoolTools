@@ -10,14 +10,14 @@
         _previousParams,
         _nextState,
         _nextParams;
-    return {
-      previousState : previousState,
-      nextState     : nextState,
-      clear         : clear,
-      clearPrevious : clearPrevious,
-      clearNext     : clearNext,
-      goToNextState : goToNextState
-    };
+
+    this.previousState = previousState;
+    this.nextState     = nextState;
+    this.clear         = clear;
+    this.clearPrevious = clearPrevious;
+    this.clearNext     = clearNext;
+    this.goToNextState = goToNextState;
+
 
     function previousState(stateSet, paramsSet) {
       if (stateSet) {

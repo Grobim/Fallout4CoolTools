@@ -15,6 +15,7 @@
       data          : {
         bodyClass      : 'profile',
         windowTitleKey : 'fallout4CoolTools.layout.header.profile',
+        titleKey       : 'fallout4CoolTools.layout.header.profile',
         requireAuth    : true
       },
       ncyBreadcrumb : {

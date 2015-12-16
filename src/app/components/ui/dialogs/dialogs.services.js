@@ -6,11 +6,11 @@
   ;
 
   function DialogsServiceFactory($mdDialog) {
-    return {
-      stateChangeDialog          : stateChangeDialog,
-      editLocationCommentDialog  : editLocationCommentDialog,
-      confirmDeleteCommentDialog : confirmDeleteCommentDialog
-    };
+
+    this.stateChangeDialog          = stateChangeDialog;
+    this.editLocationCommentDialog  = editLocationCommentDialog;
+    this.confirmDeleteCommentDialog = confirmDeleteCommentDialog;
+
 
     function stateChangeDialog() {
       return $mdDialog.show({

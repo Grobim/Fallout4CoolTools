@@ -7,9 +7,9 @@
 
   function PaginationService($filter) {
 
-    return {
-      onQueryChange : onQueryChange
-    };
+
+    this.onQueryChange = onQueryChange;
+
 
     function onQueryChange(list, tableConfig) {
 

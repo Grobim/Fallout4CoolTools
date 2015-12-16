@@ -40,6 +40,8 @@
     _this.querySearch = querySearch;
     _this.changeLang = changeLang;
 
+    _this.getTitleKey = getTitleKey;
+
     return init();
 
     function init() {
@@ -108,6 +110,10 @@
           $translate.use($item.lang);
         });
       }
+    }
+
+    function getTitleKey() {
+      return $state.current.data.titleKey || '';
     }
 
     function _createFilterFor(query) {

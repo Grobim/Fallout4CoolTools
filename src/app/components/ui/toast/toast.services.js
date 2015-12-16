@@ -6,10 +6,9 @@
   ;
 
   function ToastService($q, $timeout, $translate, $mdToast) {
-    return {
-      simple : simple,
-      error  : error
-    };
+
+    this.simple = simple;
+    this.error  = error;
 
     function simple(messageKey) {
        _showToast(messageKey);

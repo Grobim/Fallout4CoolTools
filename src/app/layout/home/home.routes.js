@@ -14,7 +14,8 @@
       controllerAs  : 'homeCtrl',
       data          : {
         bodyClass      : 'home',
-        windowTitleKey : 'fallout4CoolTools.layout.header.home'
+        windowTitleKey : 'fallout4CoolTools.layout.header.home',
+        titleKey       : 'fallout4CoolTools.layout.header.home'
       },
       ncyBreadcrumb : {
         translate : 'fallout4CoolTools.layout.header.home'

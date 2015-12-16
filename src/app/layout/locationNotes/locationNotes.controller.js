@@ -6,7 +6,7 @@
       '$scope',
       '$intFirebaseObject',
       'paginationService',
-      'locationNotesService',
+      'LocationNotesService',
       'DialogsService',
       'F4ctAuth',
       'LocationNotes',
@@ -20,7 +20,7 @@
     $scope,
     $intFirebaseObject,
     paginationService,
-    locationNotesService,
+    LocationNotesService,
     DialogsService,
     F4ctAuth,
     LocationNotes,
@@ -81,7 +81,7 @@
 
     function deleteComment(location, $event) {
       DialogsService.confirmDeleteCommentDialog($event).then(function() {
-        locationNotesService.deleteLocation($intFirebaseObject(new LocationNote(_this.userId, location.name)));
+        LocationNotesService.deleteLocation($intFirebaseObject(new LocationNote(_this.userId, location.name)));
       });
     }
 

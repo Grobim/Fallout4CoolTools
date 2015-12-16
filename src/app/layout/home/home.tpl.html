@@ -1,1 +1,47 @@
-<div>YATAAAAAA {{1 + 1}}</div>
+<div class="home" flex layout="column" layout-margin="">
+  <div class="md-whiteframe-z1" ng-if="homeCtrl.skillLevels.locksmith" flex>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h3>
+          <span translate>fallout4CoolTools.layout.home.locksmith.header</span>
+        </h3>
+      </div>
+    </md-toolbar>
+    <md-content>
+      <md-list ng-repeat="(level, locations) in homeCtrl.skillLevels.locksmith">
+        <md-subheader>
+          <span translate>{{'fallout4CoolTools.layout.common.skillLevel.' + level}}</span>
+        </md-subheader>
+        <md-list-item ng-repeat="(location, value) in locations">
+          <md-icon md-svg-src="{{homeCtrl.getIcon(location)}}"></md-icon>
+          <p>{{location}}</p>
+        </md-list-item>
+        <md-divider></md-divider>
+      </md-list>
+    </md-content>
+  </div>  
+  <div class="md-whiteframe-z1" ng-if="homeCtrl.skillLevels.hacker" flex>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h3>
+          <span translate>fallout4CoolTools.layout.home.hacker.header</span>
+        </h3>
+      </div>
+    </md-toolbar>
+    <md-content>
+      <md-list ng-repeat="(level, locations) in homeCtrl.skillLevels.hacker">
+        <md-subheader>
+          <span translate>{{'fallout4CoolTools.layout.common.skillLevel.' + level}}</span>
+        </md-subheader>
+        <md-list-item ng-repeat="(location, value) in locations">
+          <md-icon md-svg-src="{{homeCtrl.getIcon(location)}}"></md-icon>
+          <p>{{location}}</p>
+        </md-list-item>
+        <md-divider></md-divider>
+      </md-list>
+    </md-content>
+  </div>
+  <div ng-if="!homeCtrl.skillLevels.hacker && !homeCtrl.skillLevels.locksmith">
+    <p translate>fallout4CoolTools.layout.home.noLevel</p>
+  </div>
+</div>
