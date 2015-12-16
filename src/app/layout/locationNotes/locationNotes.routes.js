@@ -13,7 +13,8 @@
       controllerAs  : 'locNotesCtrl',
       data          : {
         bodyClass      : 'locationNotes',
-        windowTitleKey : 'fallout4CoolTools.layout.header.locationNotes'
+        windowTitleKey : 'fallout4CoolTools.layout.header.locationNotes',
+        titleKey       : 'fallout4CoolTools.layout.header.locationNotes'
       },
       ncyBreadcrumb : {
         translate : 'fallout4CoolTools.layout.header.locationNotes'

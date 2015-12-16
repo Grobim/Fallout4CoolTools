@@ -17,10 +17,9 @@
     $translate,
     i18nFlagMap
   ) {
-    return {
-      getLangList     : getLangList,
-      isValidLangKey  : isValidLangKey
-    };
+
+    this.getLangList = getLangList;
+    this.isValidLangKey = isValidLangKey;
 
     function getLangList() {
       var langList = [];

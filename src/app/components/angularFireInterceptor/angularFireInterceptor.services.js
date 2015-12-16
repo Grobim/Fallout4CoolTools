@@ -21,11 +21,11 @@
 
     function FirebaseErrorInterceptor() {
       var _currentHandler = _defaultHandler;
-      return {
-        notify       : notify,
-        setHandler   : setHandler,
-        resetHandler : resetHandler
-      };
+
+      this.notify       = notify;
+      this.setHandler   = setHandler;
+      this.resetHandler = resetHandler;
+
 
       function notify(err, actionCode) {
         _currentHandler(err, actionCode);

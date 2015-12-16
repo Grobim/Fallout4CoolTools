@@ -12,9 +12,9 @@
   ;
 
   function ProfilesService($q, $intFirebaseObject, ProfileRef, ProfilePrivateInfoRef) {
-    return {
-      createProfile : createProfile
-    };
+
+    this.createProfile = createProfile;
+
 
     function createProfile(profileId, profileData) {
       var profileRef = $intFirebaseObject(new ProfileRef(profileId)),

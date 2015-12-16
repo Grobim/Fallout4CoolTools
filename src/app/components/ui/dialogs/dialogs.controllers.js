@@ -5,7 +5,7 @@
     .controller('SimpleDialogController', ['$mdDialog', SimpleDialogControllerFactory])
     .controller('EditCommentDialogController', [
       '$mdDialog',
-      'locationNotesService',
+      'LocationNotesService',
       'hackerLevels',
       'locksmithLevels',
       'location',
@@ -30,7 +30,7 @@
 
   function EditCommentDialogControllerFactory(
     $mdDialog,
-    locationNotesService,
+    LocationNotesService,
     hackerLevels,
     locksmithLevels,
     location
@@ -45,6 +45,10 @@
 
     function init() {
       _this.location = location;
+
+      _this.currentHacker = _this.location.hacker;
+      _this.currentLocksmith = _this.location.locksmith;
+
       _this.hackerLevels = ['empty'].concat(hackerLevels).map(mapLevel);
       _this.locksmithLevels = ['empty'].concat(locksmithLevels).map(mapLevel);
 
@@ -64,7 +68,7 @@
       if (_this.location.locksmith === 'empty') {
         _this.location.locksmith = null;
       }
-      locationNotesService.saveLocation(_this.location).then(function() {
+      LocationNotesService.saveLocation(_this.location, _this.currentHacker, _this.currentLocksmith).then(function() {
         $mdDialog.hide();
       });
     }
