@@ -34,7 +34,7 @@
           if (!_isMdButton($element)) {
             $element.css('height', $element.height());
           } else {
-            $element.children(':not(ng-md-icon)').css('height', '36px');
+            $element.children(':not(md-icon)').css('height', '36px');
           }
 
           $element.children(':not(#' + $attrs.loadingSpinner + 'Spinner)').hide();

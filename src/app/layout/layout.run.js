@@ -24,9 +24,9 @@
           event.preventDefault();
 
           if (toState.data.requireAuth) {
-            ToastService.error('fallout4CoolTools.layout.common.errors.rooting.requireAuth');
+            ToastService.simple('fallout4CoolTools.layout.common.errors.rooting.requireAuth');
           } else {
-            ToastService.error('fallout4CoolTools.layout.common.errors.rooting.requireUnauth');
+            ToastService.simple('fallout4CoolTools.layout.common.errors.rooting.requireUnauth');
           }
           if (!fromState.name || !fromState.name.length) {
             $state.go('fallout4CoolTools.home');
@@ -46,10 +46,10 @@
         _.isObject(auth) !== $state.current.data.requireAuth
       ) {
         if ($state.current.data.requireAuth) {
-          ToastService.error('fallout4CoolTools.layout.common.errors.rooting.requireAuth');
+          ToastService.simple('fallout4CoolTools.layout.common.errors.rooting.requireAuth');
           $state.go('fallout4CoolTools.home');
         } else {
-          ToastService.error('fallout4CoolTools.layout.common.errors.rooting.requireUnauth');
+          ToastService.simple('fallout4CoolTools.layout.common.errors.rooting.requireUnauth');
           $state.go('fallout4CoolTools.home');
         }
         $rootScope.$emit('requireAuthPageError');

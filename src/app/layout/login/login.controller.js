@@ -41,7 +41,7 @@
 
     function createAccount(email, pass, confirm) {
       if( pass !== confirm ) {
-        ToastService.error('fallout4CoolTools.layout.login.emailConnection.errors.passwordsNotMatch');
+        ToastService.simple('fallout4CoolTools.layout.login.emailConnection.errors.passwordsNotMatch');
       }
       else {
         F4ctAuth.$createUser({email: email, password: pass})
@@ -104,14 +104,14 @@
       _this.pass = '';
       _this.confirm = '';
       if (err.code === 'EMAIL_TAKEN') {
-        ToastService.error('fallout4CoolTools.layout.login.emailConnection.errors.emailTaken');
+        ToastService.simple('fallout4CoolTools.layout.login.emailConnection.errors.emailTaken');
       } else if (err.code === 'INVALID_PASSWORD') {
-        ToastService.error('fallout4CoolTools.layout.login.emailConnection.errors.invalidPassword');
+        ToastService.simple('fallout4CoolTools.layout.login.emailConnection.errors.invalidPassword');
       } else if (err.code === 'INVALID_USER') {
-        ToastService.error('fallout4CoolTools.layout.login.emailConnection.errors.invalidUser');
+        ToastService.simple('fallout4CoolTools.layout.login.emailConnection.errors.invalidUser');
       } else {
         console.log(err, err.code);
-        ToastService.error(err);
+        ToastService.simple(err);
       }
     }
   }

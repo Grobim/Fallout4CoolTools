@@ -101,7 +101,7 @@
         var _messagesTemplate = 
               '<div ' +
                    'ng-messages="' + _elementKey + '.$error" ' +
-                   'ng-if="' + _elementKey + '.$dirty" ' +
+                   'ng-show="' + _elementKey + '.$dirty" ' +
                    'role="alert">' +
               '</div>',
             _messagesEl = $(_messagesTemplate),

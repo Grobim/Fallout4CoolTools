@@ -1,6 +1,18 @@
 body.locationNotes {
-  md-list.locationList md-list-item {
+
+  .search-location {
+    margin-left  : 15px;
+    margin-right : 15px;
     md-icon {
+      color : black;
+    }
+    .md-errors-spacer {
+      display: none;
+    }
+  }
+
+  md-list.locationList md-list-item {
+    >md-icon {
       fill:green;
       padding-left:16px;
     }

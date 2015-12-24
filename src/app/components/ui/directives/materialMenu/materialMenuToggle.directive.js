@@ -24,9 +24,9 @@
 
       $scope.getCaretIcon = function() {
         if ($scope.isOpen()) {
-          return 'keyboard_arrow_up';
+          return 'keyboard_arrow_up.svg';
         } else {
-          return 'keyboard_arrow_down';
+          return 'keyboard_arrow_down.svg';
         }
       };
 
