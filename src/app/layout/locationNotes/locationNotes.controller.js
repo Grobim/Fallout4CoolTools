@@ -63,7 +63,7 @@
       var style = {};
 
       if (hasComment(location) && isConnected()) {
-        style.fill = 'red';
+        style.color = 'red';
       }
 
       return style;

@@ -2,10 +2,10 @@
   <md-dialog-content class="md-dialog-content" role="document" tabIndex="-1">
     <h2 class="md-title" translate translate-values="{location : editCommentdialog.location.$id}">fallout4CoolTools.components.ui.dialogs.locationComment.title</h2>
     <div class="md-dialog-content-body">
-      <form name="editCommentdialog.commentForm">
+      <form name="editCommentdialog.commentForm" layout="column">
         <md-input-container>
           <label for="locationComment" translate>fallout4CoolTools.layout.common.fields.locationNotes</label>
-          <textarea id="locationComment" name="locationComment" ng-model="editCommentdialog.location.note" columns="1" rows="5"></textarea>
+          <textarea id="locationComment" name="locationComment" ng-model="editCommentdialog.location.note"></textarea>
         </md-input-container>
         <md-input-container flex>
           <label for="locksmith" translate>fallout4CoolTools.layout.common.fields.locksmith</label>
