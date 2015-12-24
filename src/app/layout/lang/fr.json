@@ -26,8 +26,8 @@
         "required" : "Ce champ est requis",
         "email"    : "Email incorrect",
         "rooting"  : {
-          "requireAuth"   : "Ce champ est seulement disponible pour les utilisateurs connectés",
-          "requireUnauth" : "Ce champ est seulement disponible pour les utilisateurs déconnectés"
+          "requireAuth"   : "Cette page est seulement disponible pour les utilisateurs connectés",
+          "requireUnauth" : "Cette page est seulement disponible pour les utilisateurs déconnectés"
         }
       }
     },
