@@ -2,9 +2,9 @@
   <md-sidenav class="md-sidenav-left md-whiteframe-z1 main-side-nav"
               md-component-id="mainMenu"
               md-is-locked-open="$mdMedia('gt-md')"
-              ng-class="{'md-whiteframe-z3' : mainMenuHovered}"
-              ng-mouseover="mainMenuHovered = true;"
-              ng-mouseleave="mainMenuHovered = false;"
+              ng-class="{'md-whiteframe-z3' : layoutCtrl.mainMenuHovered}"
+              ng-mouseover="layoutCtrl.mainMenuHovered = true;"
+              ng-mouseleave="layoutCtrl.mainMenuHovered = false;"
               md-swipe-left="layoutCtrl.toggleNavbar()">
     
     <md-toolbar class="md-hue-2 md-whiteframe-z1">
@@ -25,9 +25,11 @@
             <span translate>{{section.name | translate}}</span>
           </h2>
           <material-menu-link section="section"
-                         ng-if="section.type === 'link'"></material-menu-link>
+                         ng-if="section.type === 'link'"
+                         on-click="layoutCtrl.onClick()"></material-menu-link>
           <material-menu-toggle section="section"
-                           ng-if="section.type === 'toggle'"></material-menu-toggle>
+                           ng-if="section.type === 'toggle'"
+                           on-click="layoutCtrl.onClick()"></material-menu-toggle>
         </li>
         <li id="logout-menu-item" ng-show-auth class="md-default-theme md-bg md-warn md-hue-1">
           <md-button flex layout="row" ng-click="layoutCtrl.logout()">

@@ -8,6 +8,7 @@
       '$q',
       '$state',
       '$mdSidenav',
+      '$mdMedia',
       '$translate',
       'F4ctAuth',
       'breadCrumbModelService',
@@ -22,6 +23,7 @@
     $q,
     $state,
     $mdSidenav,
+    $mdMedia,
     $translate,
     F4ctAuth,
     breadCrumbModelService,
@@ -42,6 +44,8 @@
 
     _this.getTitleKey = getTitleKey;
 
+    _this.onClick = onClick;
+
     return init();
 
     function init() {
@@ -56,6 +60,14 @@
       $rootScope.$on('$translateChangeSuccess', function(e, data) {
         _this.selectedItem = _.find(_this.langs, 'lang', data.language);
       });
+
+    }
+
+    function onClick() {
+
+      if ($mdMedia('xs') || $mdMedia('sm') || $mdMedia('md')) {
+        $mdSidenav('mainMenu').close();
+      }
 
     }
 

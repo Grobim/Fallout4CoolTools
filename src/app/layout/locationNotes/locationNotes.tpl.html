@@ -26,10 +26,10 @@
           <md-icon md-svg-src="{{'assets/images/locations/' + loc.icon + '.svg'}}"></md-icon>
           <p>{{ loc.name }}</p>
           <md-button ng-if="locNotesCtrl.hasComment(loc) && locNotesCtrl.isConnected()" class="md-icon-button" aria-label="Delete comment" ng-click="locNotesCtrl.deleteComment(loc, $event)">
-            <md-icon md-svg-src="delete.svg" style="color: red;"></md-icon>
+            <md-icon md-svg-src="delete.svg" class="md-default-theme md-fg md-warn"></md-icon>
           </md-button>
           <md-button ng-disabled="!locNotesCtrl.isConnected()" class="md-icon-button" aria-label="Comment" ng-click="locNotesCtrl.editComment(loc, $event)">
-            <md-icon md-svg-src="comment.svg" ng-style="locNotesCtrl.getIconStyle(loc)"></md-icon>
+            <md-icon md-svg-src="comment.svg" ng-class="locNotesCtrl.getIconClass(loc)"></md-icon>
           </md-button>
         </md-list-item>
       </md-list>

@@ -8,7 +8,8 @@
   function MenuToggleDirective($state, materialMenu) {
     return {
       scope: {
-        section : '='
+        section : '=',
+        onClick : '&'
       },
       templateUrl: 'app/components/ui/directives/materialMenu/materialMenuToggle.tpl.html',
       link: link

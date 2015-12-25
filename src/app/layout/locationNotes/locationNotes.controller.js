@@ -30,7 +30,7 @@
 
     var _this = this;
 
-    _this.getIconStyle = getIconStyle;
+    _this.getIconClass = getIconClass;
     _this.onQueryChange = onQueryChange;
 
     _this.editComment = editComment;
@@ -59,14 +59,16 @@
       }
     }
 
-    function getIconStyle(location) {
-      var style = {};
+    function getIconClass(location) {
+      var classes = {};
 
       if (hasComment(location) && isConnected()) {
-        style.color = 'red';
+        classes['md-default-theme'] = true;
+        classes['md-fg'] = true;
+        classes['md-warn'] = true;
       }
 
-      return style;
+      return classes;
     }
 
     function onQueryChange() {
