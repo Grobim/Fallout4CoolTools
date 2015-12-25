@@ -29,37 +29,36 @@
       var deferred = $q.defer(),
           hackerBiDir,
           locksmithBiDir;
-      location.$save().then(function() {
 
-        if (location.hacker) {
-          hackerBiDir = $intFirebaseObject(new BiDirLocationNote(F4ctAuth.$getAuth().uid, 'hacker', location.hacker));
-          hackerBiDir.$loaded(function() {
-            hackerBiDir[location.$id] = true;
-            hackerBiDir.$save();
-          });
-        }
-        if (currentHacker && currentHacker !== location.hacker) {
-          $intFirebaseObject(
-            new BiDirLocationNote(F4ctAuth.$getAuth().uid, 'hacker', currentHacker).child(location.$id)
-          ).$remove();
-        }
+      location.$save();
 
-        if (location.locksmith) {
-          locksmithBiDir = $intFirebaseObject(new BiDirLocationNote(F4ctAuth.$getAuth().uid, 'locksmith', location.locksmith));
-          locksmithBiDir.$loaded(function() {
-            locksmithBiDir[location.$id] = true;
-            locksmithBiDir.$save();
-          });
-        }
-        if (currentLocksmith && currentLocksmith !== location.locksmith) {
-          $intFirebaseObject(
-            new BiDirLocationNote(F4ctAuth.$getAuth().uid, 'locksmith', currentLocksmith).child(location.$id)
-          ).$remove();
-        }
+      if (location.hacker) {
+        hackerBiDir = $intFirebaseObject(new BiDirLocationNote(F4ctAuth.$getAuth().uid, 'hacker', location.hacker));
+        hackerBiDir.$loaded(function() {
+          hackerBiDir[location.$id] = true;
+          hackerBiDir.$save();
+        });
+      }
+      if (currentHacker && currentHacker !== location.hacker) {
+        $intFirebaseObject(
+          new BiDirLocationNote(F4ctAuth.$getAuth().uid, 'hacker', currentHacker).child(location.$id)
+        ).$remove();
+      }
 
-        deferred.resolve();
+      if (location.locksmith) {
+        locksmithBiDir = $intFirebaseObject(new BiDirLocationNote(F4ctAuth.$getAuth().uid, 'locksmith', location.locksmith));
+        locksmithBiDir.$loaded(function() {
+          locksmithBiDir[location.$id] = true;
+          locksmithBiDir.$save();
+        });
+      }
+      if (currentLocksmith && currentLocksmith !== location.locksmith) {
+        $intFirebaseObject(
+          new BiDirLocationNote(F4ctAuth.$getAuth().uid, 'locksmith', currentLocksmith).child(location.$id)
+        ).$remove();
+      }
 
-      });
+      deferred.resolve();
 
       return deferred.promise;
     }
@@ -79,10 +78,9 @@
           locksmithBiDir.$remove();
         }
 
-        location.$remove().then(function() {
-          deferred.resolve();
-        });
-        
+        location.$remove();
+
+        deferred.resolve();
 
       });
 

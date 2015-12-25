@@ -68,9 +68,9 @@
       if (_this.location.locksmith === 'empty') {
         _this.location.locksmith = null;
       }
-      LocationNotesService.saveLocation(_this.location, _this.currentHacker, _this.currentLocksmith).then(function() {
-        $mdDialog.hide();
-      });
+      LocationNotesService.saveLocation(_this.location, _this.currentHacker, _this.currentLocksmith);
+
+      $mdDialog.hide();
     }
 
   }
