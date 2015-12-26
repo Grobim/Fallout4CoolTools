@@ -16,19 +16,19 @@
     return locales(path.join(conf.paths.tmp, '/serve/langs'));
   });
 
-  gulp.task('locales-reload', ['locales'], function() {
-    browserSync.reload();
-  });
-
   gulp.task('locales:dist', function() {
     return locales(path.join(conf.paths.dist, '/langs'));
+  });
+
+  gulp.task('locales-reload', ['locales'], function() {
+    browserSync.reload();
   });
 
   function locales(targetFolder) {
 
     var chain = gulp.src(langs.map(function(lang) {
-        return path.join(conf.paths.src, '/**/lang/' + lang + '.json');
-      }));
+      return path.join(conf.paths.src, '/**/lang/' + lang + '.json');
+    }));
     for (var i = 0; i < langs.length; ++i) {
       var lang = langs[i],
           langFilter = filter('**/' + lang + '.json', {restore: true});

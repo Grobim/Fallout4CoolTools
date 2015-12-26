@@ -46,7 +46,7 @@
     }
 
     function getIcon(location) {
-      return 'assets/images/locations/' + _.find(Locations, 'name', location).icon + '.svg';
+      return _.find(Locations, 'name', location).icon;
     }
 
   }
