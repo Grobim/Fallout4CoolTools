@@ -109,6 +109,8 @@
         ToastService.simple('fallout4CoolTools.layout.login.emailConnection.errors.invalidPassword');
       } else if (err.code === 'INVALID_USER') {
         ToastService.simple('fallout4CoolTools.layout.login.emailConnection.errors.invalidUser');
+      } else if (err.code === 'USER_CANCELLED') {
+        ToastService.simple('fallout4CoolTools.layout.login.emailConnection.errors.userCanceled');
       } else {
         console.log(err, err.code);
         ToastService.simple(err);
