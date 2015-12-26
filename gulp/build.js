@@ -1,9 +1,9 @@
 (function() {
   'use strict';
 
-  var path = require('path'),
-      gulp = require('gulp'),
-      conf = require('./conf'),
+  var path        = require('path'),
+      gulp        = require('gulp'),
+      conf        = require('./conf'),
       runSequence = require('run-sequence'),
 
       $ = require('gulp-load-plugins')({
@@ -89,14 +89,24 @@
     return gulp.src([
         path.join(conf.paths.src, '/**/*'),
         path.join('!' + conf.paths.src, '/**/lang/*'),
-        path.join('!' + conf.paths.src, '/**/*.{html,css,js,scss}')
+        path.join('!' + conf.paths.src, '/**/*.{html,css,js,scss}'),
+        path.join('!' + conf.paths.src, '/assets/images/locations/*')
       ])
       .pipe(fileFilter)
       .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
   });
 
-  gulp.task('build', ['clean'], function(cb) {
-    runSequence(['html', 'fonts', 'other', 'locales:dist'], cb);
+  gulp.task('build', ['clean'], function(callback) {
+    runSequence(
+      [
+        'html',
+        'fonts',
+        'other',
+        'locales:dist',
+        'locationIcons:dist'
+      ],
+      callback
+    );
   });
 
 })();

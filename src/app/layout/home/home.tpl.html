@@ -13,7 +13,7 @@
           <span translate>{{'fallout4CoolTools.layout.common.skillLevel.' + level}}</span>
         </md-subheader>
         <md-list-item ng-repeat="(location, value) in locations">
-          <md-icon md-svg-src="{{homeCtrl.getIcon(location)}}"></md-icon>
+          <md-icon md-svg-icon="{{'locationIcons:' + homeCtrl.getIcon(location)}}"></md-icon>
           <p>{{location}}</p>
         </md-list-item>
         <md-divider></md-divider>
@@ -34,7 +34,7 @@
           <span translate>{{'fallout4CoolTools.layout.common.skillLevel.' + level}}</span>
         </md-subheader>
         <md-list-item ng-repeat="(location, value) in locations">
-          <md-icon md-svg-src="{{homeCtrl.getIcon(location)}}"></md-icon>
+          <md-icon md-svg-icon="{{'locationIcons:' + homeCtrl.getIcon(location)}}"></md-icon>
           <p>{{location}}</p>
         </md-list-item>
         <md-divider></md-divider>

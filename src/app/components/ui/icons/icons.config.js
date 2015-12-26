@@ -6,7 +6,10 @@
   ;
 
   function iconsConfig($mdIconProvider) {
-    $mdIconProvider.defaultIconSet('iconSet.svg', 24);
+    $mdIconProvider
+      .defaultIconSet('iconSet.svg', 24)
+      .iconSet('locationIcons', 'locationIcons/locationIcons.svg')
+    ;
   }
 
 })();
