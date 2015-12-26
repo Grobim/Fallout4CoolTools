@@ -1,19 +1,19 @@
 <h2 class="md-headline" translate>fallout4CoolTools.layout.login.fastConnection.header</h2>
 <div layout-gt-sm="row" layout="column" class="login-providers">
   <md-button class="md-primary md-raised" flex ng-click="loginCtrl.oauthLogin('facebook')">
-    <md-icon md-svg-src="facebook-box.svg"></md-icon>
+    <md-icon md-svg-icon="facebook-box"></md-icon>
     <span translate>fallout4CoolTools.layout.login.fastConnection.facebook</span>
   </md-button>
   <md-button class="md-primary md-raised" flex ng-click="loginCtrl.oauthLogin('google')" flex>
-    <md-icon md-svg-src="google-plus.svg"></md-icon>
+    <md-icon md-svg-icon="google-plus"></md-icon>
     <span translate>fallout4CoolTools.layout.login.fastConnection.google</span>
   </md-button>
   <md-button class="md-primary md-raised" flex ng-click="loginCtrl.oauthLogin('twitter')">
-    <md-icon md-svg-src="twitter.svg"></md-icon>
+    <md-icon md-svg-icon="twitter"></md-icon>
     <span translate>fallout4CoolTools.layout.login.fastConnection.twitter</span>
   </md-button>
   <md-button class="md-primary md-raised" flex ng-click="loginCtrl.oauthLogin('github')">
-    <md-icon md-svg-src="github-circle.svg"></md-icon>
+    <md-icon md-svg-icon="github-circle"></md-icon>
     <span translate>fallout4CoolTools.layout.login.fastConnection.github</span>
   </md-button>
 </div>
@@ -22,17 +22,17 @@
 <form name="loginCtrl.loginForm">
   <md-input-container class="md-icon-float md-block" smart-field="">
     <label for="loginEmail"><span translate>fallout4CoolTools.layout.common.fields.email</span></label>
-    <md-icon md-svg-src="email.svg"></md-icon>
+    <md-icon md-svg-icon="email"></md-icon>
     <input id="loginEmail" required name="email" type="email" ng-model="loginCtrl.email" />
   </md-input-container>
   <md-input-container class="md-icon-float md-block" smart-field="">
     <label for="loginPass"><span translate>fallout4CoolTools.layout.common.fields.password</span></label>
-    <md-icon md-svg-src="lock.svg"></md-icon>
+    <md-icon md-svg-icon="lock"></md-icon>
     <input id="loginPass" required name="pass" type="password" ng-model="loginCtrl.pass" />
   </md-input-container>
   <md-input-container ng-cloak ng-show="loginCtrl.createMode" class="md-icon-float md-block" smart-field="">
     <label for="loginConfirm"><span translate>fallout4CoolTools.layout.common.fields.confirmPassword</span></label>
-    <md-icon md-svg-src="lock.svg"></md-icon>
+    <md-icon md-svg-icon="lock"></md-icon>
     <input id="loginConfirm" ng-required="loginCtrl.createMode" name="confirm" type="password" ng-model="loginCtrl.confirm" />
   </md-input-container>
   <div layout="row" flex="100" flex-gt-sm="70" layout-wrap="">
