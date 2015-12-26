@@ -46,6 +46,7 @@
     function init() {
       _this.location = location;
 
+      _this.currentNote = _this.location.note;
       _this.currentHacker = _this.location.hacker;
       _this.currentLocksmith = _this.location.locksmith;
 
@@ -69,7 +70,7 @@
         _this.location.locksmith = null;
       }
 
-      LocationNotesService.saveLocation(_this.location, _this.currentHacker, _this.currentLocksmith);
+      LocationNotesService.saveLocation(_this.location, _this.currentNote, _this.currentHacker, _this.currentLocksmith);
 
       $mdDialog.hide();
     }

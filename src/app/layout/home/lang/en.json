@@ -1,11 +1,14 @@
 {
   "fallout4CoolTools.layout.home": {
-    "noLevel": "No location annotated with required hacker/locksmith level",
+    "noLevel": "No location annotated with a note or required hacker/locksmith level",
     "hacker": {
       "header": "Hacker levels"
     },
     "locksmith": {
       "header": "Locksmith levels"
+    },
+    "notes": {
+      "header": "Notes"
     }
   }
 }

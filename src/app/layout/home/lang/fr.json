@@ -1,11 +1,14 @@
 {
   "fallout4CoolTools.layout.home": {
-    "noLevel": "Aucune location annotée comme ayant besoin d'un certain niveau de crochetage/piratage",
+    "noLevel": "Aucune location annotée comme ayant un note ou besoin d'un certain niveau de crochetage/piratage",
     "hacker": {
       "header": "Niveaux de piratages"
     },
     "locksmith": {
       "header": "Niveaux de crochetage"
+    },
+    "notes": {
+      "header": "Notes"
     }
   }
 }

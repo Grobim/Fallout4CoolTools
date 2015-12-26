@@ -4,7 +4,8 @@
   angular.module('fallout4CoolTools.components.persistence.biDirlocationNotes')
     .factory('UserBiDirLocationNotes', ['F4ctRootRef', UserBiDirLocationNotes])
     .factory('BiDirLocationNotes', ['UserBiDirLocationNotes', BiDirLocationNotes])
-    .factory('BiDirLocationNote', ['BiDirLocationNotes', BiDirLocationNote])
+    .factory('BiDirLocationNoteFields', ['BiDirLocationNotes', BiDirLocationNoteFields])
+    .factory('BiDirLocationNoteField', ['BiDirLocationNoteFields', BiDirLocationNoteField])
   ;
 
   function UserBiDirLocationNotes(F4ctRootRef) {
@@ -17,9 +18,15 @@
     };
   }
 
-  function BiDirLocationNote(BiDirLocationNotes) {
-    return function(userId, skill, level) {
-      return new BiDirLocationNotes(userId).child(skill).child(level);
+  function BiDirLocationNoteFields(BiDirLocationNotes) {
+    return function(userId, field) {
+      return new BiDirLocationNotes(userId).child(field);
+    };
+  }
+
+  function BiDirLocationNoteField(BiDirLocationNoteFields) {
+    return function(userId, field, level) {
+      return new BiDirLocationNoteFields(userId, field).child(level);
     };
   }
 
