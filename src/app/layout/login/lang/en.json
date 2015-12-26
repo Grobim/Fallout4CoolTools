@@ -19,7 +19,8 @@
         "passwordsNotMatch" : "Passwords do not match",
         "emailTaken"        : "This email is already taken",
         "invalidPassword"   : "The password is invalid",
-        "invalidUser"       : "No account related to that email"
+        "invalidUser"       : "No account related to that email",
+        "userCanceled"      : "Connexion canceled"
       },
       "success" : {
         "login"    : "Successfully logged in",
