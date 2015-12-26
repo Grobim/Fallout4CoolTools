@@ -4,14 +4,14 @@
                       smart-field=""
                       loading-spinner="profilePublicInfosLoad">
     <label for="loginName"><span translate>fallout4CoolTools.layout.profile.fields.name</span></label>
-    <md-icon md-svg-src="person.svg"></md-icon>
+    <md-icon md-svg-icon="person"></md-icon>
     <input id="loginName" label="loginName" name="loginName" type="text" ng-model="profileCtrl.profile.nickname" required />
   </md-input-container>
   <h2 class="md-headline" translate>fallout4CoolTools.layout.profile.privateData</h2>
   <div layout-gt-xs="row" layout="column">
     <md-input-container class="md-icon-float" smart-field="" loading-spinner="profilePrivateInfosLoad" flex>
       <label for="loginEmail"><span translate>fallout4CoolTools.layout.common.fields.email</span></label>
-      <md-icon md-svg-src="email.svg"></md-icon>
+      <md-icon md-svg-icon="email"></md-icon>
       <input id="loginEmail" label="loginEmail" name="loginEmail" type="email" ng-model="profileCtrl.profilePrivateInfos.email" ng-disabled="profileCtrl.userAuth.provider === 'password'" />
     </md-input-container>
     <md-switch loading-spinner="publicProfilePrivateInfoLoad" id="loginName" ng-model="profileCtrl.publicProfilePrivateInfo.email" aria-label="Make public" class="md-primary" md-no-ink>

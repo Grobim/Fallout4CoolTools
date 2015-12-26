@@ -4,7 +4,7 @@
            aria-controls="docs-menu-{{section.name | nospace}}"
            flex layout="row"
            aria-expanded="{{isOpen()}}">
-  <md-icon md-svg-src="{{section.icon + '.svg'}}" ng-style="{color : (!section.icon) ? 'transparent': ''}"></md-icon> 
+  <md-icon md-svg-icon="{{section.icon}}" ng-style="{color : (!section.icon) ? 'transparent': ''}"></md-icon> 
   <span flex="grow" layout-fill="">{{section.name | translate | trunc:21}}</span>
   <md-icon icon="{{getCaretIcon()}}" class="right-icon"></md-icon> 
 </md-button>
