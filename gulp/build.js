@@ -4,6 +4,7 @@
   var path = require('path'),
       gulp = require('gulp'),
       conf = require('./conf'),
+      runSequence = require('run-sequence'),
 
       $ = require('gulp-load-plugins')({
         pattern : [
@@ -94,11 +95,8 @@
       .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
   });
 
-  gulp.task('build', ['clean'], function() {
-    gulp.start('html');
-    gulp.start('fonts');
-    gulp.start('other');
-    gulp.start('locales:dist');
+  gulp.task('build', ['clean'], function(cb) {
+    runSequence(['html', 'fonts', 'other', 'locales:dist'], cb);
   });
 
 })();
