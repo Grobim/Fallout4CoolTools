@@ -26,65 +26,64 @@
     this.deleteLocation = deleteLocation;
 
     function saveLocation(location, currentHacker, currentLocksmith) {
-      var deferred = $q.defer(),
+      var promises = [],
           hackerBiDir,
           locksmithBiDir;
 
-      location.$save();
+      promises.push(location.$save());
 
       if (location.hacker) {
         hackerBiDir = $intFirebaseObject(new BiDirLocationNote(F4ctAuth.$getAuth().uid, 'hacker', location.hacker));
         hackerBiDir.$loaded(function() {
           hackerBiDir[location.$id] = true;
-          hackerBiDir.$save();
+          promises.push(hackerBiDir.$save());
         });
       }
       if (currentHacker && currentHacker !== location.hacker) {
-        $intFirebaseObject(
+        promises.push($intFirebaseObject(
           new BiDirLocationNote(F4ctAuth.$getAuth().uid, 'hacker', currentHacker).child(location.$id)
-        ).$remove();
+        ).$remove());
       }
 
       if (location.locksmith) {
         locksmithBiDir = $intFirebaseObject(new BiDirLocationNote(F4ctAuth.$getAuth().uid, 'locksmith', location.locksmith));
         locksmithBiDir.$loaded(function() {
           locksmithBiDir[location.$id] = true;
-          locksmithBiDir.$save();
+          promises.push(locksmithBiDir.$save());
         });
       }
       if (currentLocksmith && currentLocksmith !== location.locksmith) {
-        $intFirebaseObject(
+        promises.push($intFirebaseObject(
           new BiDirLocationNote(F4ctAuth.$getAuth().uid, 'locksmith', currentLocksmith).child(location.$id)
-        ).$remove();
+        ).$remove());
       }
 
-      deferred.resolve();
-
-      return deferred.promise;
+      return $q.all(promises);
     }
 
     function deleteLocation(location) {
-      var deferred = $q.defer();
+      var deferred = $q.defer(),
+          promises = [deferred.promise];
 
       location.$loaded(function() {
 
         if (location.hacker) {
           var hackerBiDir = $intFirebaseObject(new BiDirLocationNote(F4ctAuth.$getAuth().uid, 'hacker', location.hacker).child(location.$id));
-          hackerBiDir.$remove();
+          promises.push(hackerBiDir.$remove());
         }
 
         if (location.locksmith) {
           var locksmithBiDir = $intFirebaseObject(new BiDirLocationNote(F4ctAuth.$getAuth().uid, 'locksmith', location.locksmith).child(location.$id));
-          locksmithBiDir.$remove();
+          promises.push(locksmithBiDir.$remove());
         }
 
-        location.$remove();
+        promises.push(location.$remove());
 
         deferred.resolve();
 
       });
 
-      return deferred.promise;
+      return $q.all(promises);
     }
   }
 
