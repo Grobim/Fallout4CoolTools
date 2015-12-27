@@ -29,6 +29,10 @@
     directory: 'bower_components'
   };
 
+  exports.availableLanguages = ['en', 'fr'];
+
+  exports.langFlags = getFlags(exports.availableLanguages);
+
   /**
    *  Common implementation for an error handler of a Gulp plugin
    */
@@ -39,5 +43,15 @@
       this.emit('end');
     };
   };
+
+  function getFlags(langs) {
+    var flagMap = {
+      en : 'gb'
+    };
+
+    return langs.map(function(lang) {
+      return flagMap[lang] || lang;
+    });
+  }
 
 })();

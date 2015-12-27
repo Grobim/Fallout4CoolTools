@@ -81,6 +81,18 @@
       .pipe(gulp.dest(path.join(conf.paths.dist, '/fonts/')));
   });
 
+  gulp.task('flags', function() {
+    var fileFilter = $.filter(function (file) {
+      return file.stat.isFile();
+    });
+    return gulp.src([
+        path.join(conf.paths.src, '/**/{' + conf.langFlags.join(',') + '}.png')
+      ])
+      .pipe(fileFilter)
+      .pipe(gulp.dest(path.join(conf.paths.dist, '/')))
+    ;
+  });
+
   gulp.task('other', function () {
     var fileFilter = $.filter(function (file) {
       return file.stat.isFile();
@@ -90,10 +102,12 @@
         path.join(conf.paths.src, '/**/*'),
         path.join('!' + conf.paths.src, '/**/lang/*'),
         path.join('!' + conf.paths.src, '/**/*.{html,css,js,scss}'),
-        path.join('!' + conf.paths.src, '/assets/images/locations/*')
+        path.join('!' + conf.paths.src, '/assets/images/locations/*'),
+        path.join('!' + conf.paths.src, '/assets/images/flags/**/*')
       ])
       .pipe(fileFilter)
-      .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
+      .pipe(gulp.dest(path.join(conf.paths.dist, '/')))
+    ;
   });
 
   gulp.task('build', ['clean'], function(callback) {
@@ -101,6 +115,7 @@
       [
         'html',
         'fonts',
+        'flags',
         'other',
         'locales:dist',
         'locationIcons:dist'

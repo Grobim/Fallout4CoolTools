@@ -10,7 +10,7 @@
 
       browserSync = require('browser-sync'),
 
-      langs = ['en', 'fr'];
+      langs = conf.availableLanguages;
 
   gulp.task('locales', function() {
     return locales(path.join(conf.paths.tmp, '/serve/langs'));
