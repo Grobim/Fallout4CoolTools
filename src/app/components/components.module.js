@@ -9,6 +9,7 @@
     'fallout4CoolTools.components.angularFireInterceptor',
     'fallout4CoolTools.components.i18n',
     'fallout4CoolTools.components.persistence',
+    'fallout4CoolTools.components.debugDisabler',
     'fallout4CoolTools.profiles'
   ]);
 

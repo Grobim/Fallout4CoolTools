@@ -32,7 +32,13 @@
       .pipe(gulp.dest(conf.paths.tmp + '/partials/'));
   });
 
-  gulp.task('html', ['inject', 'partials'], function () {
+  gulp.task('html', ['inject', 'partials'], html);
+
+  gulp.task('html:test', ['inject:test', 'partials'], html);
+
+  gulp.task('html:prod', ['inject:prod', 'partials'], html);
+
+  function html() {
     var partialsInjectFile = gulp.src(path.join(conf.paths.tmp, '/partials/templateCacheHtml.js'), { read: false }),
         partialsInjectOptions = {
           starttag     : '<!-- inject:partials -->',
@@ -70,7 +76,7 @@
       .pipe(gulp.dest(path.join(conf.paths.dist, '/')))
       .pipe($.size({ title: path.join(conf.paths.dist, '/'), showFiles: true }))
     ;
-  });
+  }
 
   // Only applies for fonts from bower dependencies
   // Custom fonts are handled by the "other" task
@@ -110,18 +116,26 @@
     ;
   });
 
-  gulp.task('build', ['clean'], function(callback) {
-    runSequence(
-      [
-        'html',
-        'fonts',
-        'flags',
-        'other',
-        'locales:dist',
-        'locationIcons:dist'
-      ],
-      callback
-    );
-  });
+  gulp.task('build', ['clean'], build());
+
+  gulp.task('build:test', ['clean'], build('test'));
+
+  gulp.task('build:prod', ['clean'], build('prod'));
+
+  function build(env) {
+    return function(callback) {
+      runSequence(
+        [
+          (!!env) ? 'html:' + env : 'html',
+          'fonts',
+          'flags',
+          'other',
+          'locales:dist',
+          'locationIcons:dist'
+        ],
+        callback
+      );
+    };
+  }
 
 })();
