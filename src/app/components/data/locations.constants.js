@@ -846,6 +846,118 @@
       {
         name : 'Mahkra Fishpacking',
         icon : 'factory'
+      },
+      {
+        name : 'Rook Family House',
+        icon : 'city_1'
+      },
+      {
+        name : 'Salem',
+        icon : 'house'
+      },
+      {
+        name : 'Sandy Coves Convalescent Home',
+        icon : 'healthCross'
+      },
+      {
+        name : 'Crater House',
+        icon : 'radioactive'
+      },
+      {
+        name : 'Kingsport Lighthouse',
+        icon : 'pier'
+      },
+      {
+        name : 'Croup Manor',
+        icon : 'city_1'
+      },
+      {
+        name : 'Poseidon Energy',
+        icon : 'factory'
+      },
+      {
+        name : 'Peabody House',
+        icon : 'cabin'
+      },
+      {
+        name : 'Wilson Atomatoys Factory',
+        icon : 'factory'
+      },
+      {
+        name : 'Murkwater Construction Site',
+        icon : 'marsh'
+      },
+      {
+        name : 'Somerville Place',
+        icon : 'farm'
+      },
+      {
+        name : 'Cave (Red Rocket Station)',
+        icon : 'cave'
+      },
+      {
+        name : 'Capsized Factory',
+        icon : 'factory'
+      },
+      {
+        name : 'Atlantic Offices',
+        icon : 'building'
+      },
+      {
+        name : 'Hopesmarch Pentecostal Church',
+        icon : 'chapel'
+      },
+      {
+        name : 'Nahant Chapel',
+        icon : 'chapel'
+      },
+      {
+        name : 'Nahant Oceanological Society',
+        icon : 'pier'
+      },
+      {
+        name : 'Relay Tower 0DB-521',
+        icon : 'radioTower'
+      },
+      {
+        name : 'Vertibird Wreckage',
+        icon : 'plane'
+      },
+      {
+        name : 'Crater of Atom',
+        icon : 'radioactive'
+      },
+      {
+        name : 'Cave (Super-Duper Mart)',
+        icon : 'cave'
+      },
+      {
+        name : 'Forgotten Church',
+        icon : 'chapel'
+      },
+      {
+        name : 'Decayed Reactor Site',
+        icon : 'dome'
+      },
+      {
+        name : 'Decrepit Factory',
+        icon : 'factory'
+      },
+      {
+        name : 'Skylanes Flight 1665',
+        icon : 'plane'
+      },
+      {
+        name : 'O\'Neill Family Manufacturing',
+        icon : 'factory'
+      },
+      {
+        name : 'Rocky Cave',
+        icon : 'cave'
+      },
+      {
+        name : 'Sentinel Site',
+        icon : 'sentinel'
       }
     ])
   ;
